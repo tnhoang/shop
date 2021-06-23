@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { COLOR, FONT, PADDING } from "../constants";
+import { COLOR, FONT,  PADDING_BTN } from "../constants";
 
 import { Button } from "antd";
 
@@ -11,7 +11,7 @@ export const Btn = styled(Button)`
   color: ${({ primary }) => (primary ? `${COLOR.white}` : `${COLOR.text}`)};
   background-color: ${({ primary }) =>
     primary ? `${COLOR.primary}` : `${COLOR.white}`};
-  padding: ${({ large }) => (large ? `${PADDING.large}` : `${PADDING.normal}`)};
+  padding: ${({ large }) => (large ? `${PADDING_BTN.large}` : `${PADDING_BTN.normal}`)};
 `;
 
 export const MyText = styled.div`

@@ -1,15 +1,16 @@
 import React from "react";
 import Rate from "../Rate";
 import styled from "styled-components";
-import { Title } from "../../Sidebar";
 import { Text } from "../../Text";
 import { Button } from "antd";
 import { COLOR, FONT } from "../../../constants";
 
 export const CardContainer = styled.div`
-  width: 270px;
+  max-width: 350px;
+  width: 100%;
+
   padding: 16px;
-  border: 2px solid ${COLOR.border};
+  border: 1px solid ${COLOR.border};
   border-radius: 28px;
 `;
 export const Img = styled.div`

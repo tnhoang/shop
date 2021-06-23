@@ -1,13 +1,29 @@
 import React from "react";
 import styled from "styled-components";
-import { COLOR, FONT, HEADER } from "../../constants";
+import { COLOR, FONT, HEADER, PADDING } from "../../constants";
 import { Text } from "../Text";
 
 import { Rate, Checkbox, Input, Button } from "antd";
 
 export const Container = styled.div`
-  width: 300px;
-  border: 1px solid ${COLOR.border};
+  @media (max-width: 1024px) {
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #fff;
+    z-index: 999;
+    height: 100vh;
+    transition: 0.2s ease-in-out;
+    ${({ toggleSidebar }) =>
+      toggleSidebar ? `left:0;opacity: 100%;` : `left: -100%;opacity: 0;`};
+    width: 230px;
+  }
+
+  @media (min-width: 1024px) {
+    display: block;
+    border: 1px solid ${COLOR.border};
+    width: 270px;
+  }
 `;
 export const Wrapper = styled.div`
   margin: 0 auto;
@@ -17,31 +33,42 @@ export const Header = styled.div`
   border-bottom: 1px solid ${COLOR.border};
   display: flex;
   align-items: center;
-  padding: 20px 32px;
+  /* padding: 20px 32px; */
   height: ${HEADER.width};
+  padding: ${PADDING};
 `;
 export const Filter = styled.div`
-  padding: 20px 32px;
+  padding: 20px 0;
   border-bottom: 1px solid ${COLOR.border};
+
+  padding: ${PADDING};
 `;
 export const Categories = styled.div`
-  padding: 20px 32px;
+  padding: 20px 0;
   border-bottom: 1px solid ${COLOR.border};
+
+  padding: ${PADDING};
 `;
 export const Price = styled.div`
-  padding: 20px 32px;
+  padding: 20px 0;
   border-bottom: 1px solid ${COLOR.border};
   display: grid;
   gap: 18px;
+
+  padding: ${PADDING};
 `;
 export const Rating = styled.div`
-  padding: 20px 32px;
+  padding: 20px 0;
   border-bottom: 1px solid ${COLOR.border};
+
+  padding: ${PADDING};
 `;
 export const Ads = styled.div`
   width: 100%;
   height: 100%;
   background-color: silver;
+
+  padding: ${PADDING};
 `;
 
 export const PriceRange = styled.div`
@@ -59,9 +86,9 @@ export function Title({ children }) {
   return <Text fontSize={FONT.small}>{children}</Text>;
 }
 
-export default function Sidebar() {
+export default function Sidebar({ toggleSidebar }) {
   return (
-    <Container>
+    <Container toggleSidebar={toggleSidebar}>
       <Wrapper>
         <Header>
           <Text fontSize={FONT.medium} fontWeight={FONT.bold}>

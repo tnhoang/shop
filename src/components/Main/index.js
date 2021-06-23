@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Input } from "antd";
 import styled from "styled-components";
 import { Text } from "../Text";
-import { SearchOutlined, HeartOutlined } from "@ant-design/icons";
+import { SearchOutlined } from "@ant-design/icons";
 import Rate from "./Rate";
 import Card from "./Card";
 import { Btn, MyText } from "../baseComponents";
@@ -10,7 +10,11 @@ import { COLOR, HEADER } from "../../constants";
 import ItemPreview from "../ItemPreview";
 
 export const Container = styled.div`
-  width: 100%;
+  border: 1px solid black;
+  overflow-y: scroll;
+  height: 100vh;
+
+  /* width: 100%; */
 `;
 export const Header = styled.div`
   padding: 0 30px;
@@ -23,21 +27,14 @@ export const HeaderButtons = styled.div`
   display: flex;
   align-items: center;
   column-gap: 20px;
-  height: 100%;
 `;
-export const HeaderPersonal = styled.div`
-  display: flex;
-  height: 66px;
-  align-items: center;
-  column-gap: 20px;
-`;
-export const Cart = styled.div``;
-export const Favorite = styled.div``;
-export const Profile = styled.div``;
+
 export const Body = styled.div`
-  display: flex;
+  /* display: flex; */
 `;
 export const Search = styled.div`
+  width: 100%;
+  border: 1px solid green;
   &::placeholder {
     background-color: #fbfbfb;
   }
@@ -50,12 +47,19 @@ export const Sorting = styled.div`
 `;
 export const ListCard = styled.div`
   margin-top: 25px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
-
+  /* display: grid; */
+  /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
   /* overflow-y: scroll; */
   /* height: 400px; */
+
+  display: flex;
+  flex-wrap: wrap;
+  /* gap: 10px; */
+  gap: 10px;
+  /* grid-gap: 10px; */
+  border: 3px solid red;
+  justify-content: space-around;
+  align-items: center;
 `;
 
 export const MyButton = styled(Button)`
@@ -98,31 +102,32 @@ export const HearderButton = styled.div`
       : ``};
 `;
 export const ItemContent = styled.div`
-  width: 950px;
   border-right: 1px solid ${COLOR.border};
   padding: 20px 30px;
 `;
-export default function Main() {
+export default function Main({
+  togglePreview,
+  setTogglePreview,
+  toggleSidebar,
+  setToggleSidebar,
+}) {
   return (
     <Container>
       <Header>
         <HeaderButtons>
-          <HearderButton active>Shop</HearderButton>
-          <HearderButton>Shop</HearderButton>
-          <HearderButton>Shop</HearderButton>
-          <HearderButton>Shop</HearderButton>
+          <HearderButton
+            active
+            onClick={() => setToggleSidebar(!toggleSidebar)}
+          >
+            Sidebar
+          </HearderButton>
+          <HearderButton onClick={() => setTogglePreview(!togglePreview)}>
+            Preview
+          </HearderButton>
+          <HearderButton onClick={() => setToggleSidebar(!toggleSidebar)}>
+            Sidebar
+          </HearderButton>
         </HeaderButtons>
-        <HeaderPersonal>
-          <Cart>
-            <HeartOutlined style={{ fontSize: "2rem" }} />
-          </Cart>
-          <Favorite>
-            <HeartOutlined style={{ fontSize: "2rem" }} />
-          </Favorite>
-          <Profile>
-            <HeartOutlined style={{ fontSize: "2rem" }} />
-          </Profile>
-        </HeaderPersonal>
       </Header>
       <Body>
         <ItemContent>
@@ -130,7 +135,7 @@ export default function Main() {
             <Input
               allowClear
               prefix={<SearchOutlined />}
-              size="large"
+              // size="large"
               bordered={false}
               style={{
                 borderRadius: "22px",
@@ -144,7 +149,7 @@ export default function Main() {
             </SearchDescription>
           </Search>
           <Sorting>
-            <MyText>Sort</MyText>
+            {/* <MyText>Sort</MyText> */}
             <SortButtons>
               <Btn primary>Relevance</Btn>
               <Btn>Relevance</Btn>
@@ -162,9 +167,17 @@ export default function Main() {
             <Card img="" title="" rating="1" price="213" key="1" />
             <Card img="" title="" rating="1" price="213" key="2" />
             <Card img="" title="" rating="1" price="213" key="2" />
+            <Card img="" title="" rating="1" price="213" key="2" />
+            <Card img="" title="" rating="1" price="213" key="2" />
+            <Card img="" title="" rating="1" price="213" key="2" />
+            <Card img="" title="" rating="1" price="213" key="2" />
+            <Card img="" title="" rating="1" price="213" key="2" />
+            <Card img="" title="" rating="1" price="213" key="2" />
+            <Card img="" title="" rating="1" price="213" key="2" />
+            <Card img="" title="" rating="1" price="213" key="2" />
+            <Card img="" title="" rating="1" price="213" key="2" />
           </ListCard>
         </ItemContent>
-        <ItemPreview></ItemPreview>
       </Body>
     </Container>
   );

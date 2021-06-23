@@ -17,11 +17,13 @@ export const FONT = {
   bold: 600,
 };
 
-export const PADDING = {
+export const PADDING_BTN = {
   small: ".2rem 1rem",
   medium: ".75rem 2rem",
   large: "1rem 1.75rem",
 };
+
+export const PADDING = "0 30px";
 
 export const HEADER = {
   width: "66px",
