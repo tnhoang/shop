@@ -1,16 +1,16 @@
 export const COLOR = {
   primary: "#47A359",
-  text: "black",
+  text: "#414346",
   textLight: "#BDBDBD",
   white: "#fff",
   border: "#F4F4F4",
 };
 
 export const FONT = {
-  small: "0.9rem",
-  medium: "1rem",
-  big: "1.2rem",
-  large: "2.25rem",
+  small: "0.8rem",
+  medium: ".86rem",
+  large: "1.2rem",
+  xlarge: "2.25rem",
 
   light: 400,
   normal: 500,
@@ -26,5 +26,5 @@ export const PADDING_BTN = {
 export const PADDING = "0 30px";
 
 export const HEADER = {
-  width: "66px",
+  height: "66px",
 };
