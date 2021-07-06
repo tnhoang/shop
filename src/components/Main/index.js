@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Input } from "antd";
 import { SearchOutlined, MenuOutlined } from "@ant-design/icons";
 
@@ -19,12 +19,26 @@ import {
   SortButtons,
   ListCard,
 } from "./Elements";
+import productApi from "../api/productApi";
 
 export default function Main({
   setTogglePreview,
   setToggleSidebar,
   setPreviewObj,
 }) {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    async function fetchProductList() {
+      try {
+        const data = await productApi.getAll();
+        setProducts(data.products);
+      } catch (error) {
+        console.log("Failed to fetch produtcs: " + error.message);
+      }
+    }
+    fetchProductList();
+  }, []);
   return (
     <Container>
       <Header>
@@ -74,7 +88,7 @@ export default function Main({
             </SortButtons>
           </Sorting>
           <ListCard>
-            {[1, 2, 3, 4].map((c) => (
+            {products.map((c) => (
               <Card
                 img=""
                 title={"sdfdsf" + c}
