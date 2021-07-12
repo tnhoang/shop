@@ -6,6 +6,7 @@ import styled from "styled-components";
 import ItemPreview from "../components/ItemPreview";
 export const Container = styled.div``;
 export const Wrapper = styled.div`
+  max-width: 2010px;
   display: grid;
   grid-template-columns: auto 1fr auto;
 
