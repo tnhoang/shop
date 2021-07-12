@@ -20,6 +20,8 @@ import {
   ListCard,
 } from "./Elements";
 
+import ListCardTest from "./ListCardTest";
+
 export default function Main({
   setTogglePreview,
   setToggleSidebar,
@@ -27,6 +29,8 @@ export default function Main({
 }) {
   return (
     <Container>
+      <ListCardTest />
+
       <Header>
         <LeftHeader>
           <MenuBarMobile>
