@@ -2,13 +2,8 @@ import styled from "styled-components";
 import { HEADER } from "../../constants/css";
 
 export const ContainerBig = styled.div`
-  @media (min-width: 767px) {
-    display: block;
-    width: 450px;
-    height: 100vh;
+  overflow-y: scroll;
 
-    overflow-y: scroll;
-  }
   @media (max-width: 767px) {
     position: fixed;
 
@@ -19,6 +14,11 @@ export const ContainerBig = styled.div`
 
     background-color: #fff;
     ${({ togglePreview }) => (togglePreview ? `right: 0;` : `right: -200%;`)}
+  }
+  @media (min-width: 767px) {
+    display: block;
+    width: 450px;
+    height: 100vh;
   }
 `;
 
