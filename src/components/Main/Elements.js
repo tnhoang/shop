@@ -67,11 +67,20 @@ export const SortButtons = styled.div`
 `;
 
 export const ListCard = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  // Auto scale cards by width but it justify content at start
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  border: 1px solid green;
 
   margin-top: 25px;
-  gap: 10px;
+  column-gap: 10px;
+  row-gap: 20px;
 `;
 
 export const SearchDescription = styled.div`
