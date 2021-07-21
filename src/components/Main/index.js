@@ -24,8 +24,13 @@ export default function Main({
   setToggleSidebar,
   setPreviewObj,
 }) {
+  const bear = useStoreTest((state) => state.bear);
+  const incBear = useStoreTest((state) => state.incBear);
+
   return (
     <Container>
+      bear {bear}
+      <button onClick={incBear}>+</button>
       <Header>
         <LeftHeader>
           <MenuBarMobile>
