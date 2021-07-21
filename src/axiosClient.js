@@ -1,9 +1,6 @@
 import axios from "axios";
 import queryString from "query-string";
-
 import LocalStorageService from "./localStorageService";
-
-const localStorageService = LocalStorageService.getService();
 
 const axiosClient = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
@@ -15,7 +12,7 @@ const axiosClient = axios.create({
 
 axiosClient.interceptors.request.use(
   (config) => {
-    const token = localStorageService.getAccessToken();
+    const token = LocalStorageService.getAccessToken();
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
     }
@@ -36,16 +33,16 @@ axiosClient.interceptors.response.use(
       originalRequest._retry = true;
       return axios
         .post("/refresh_token", {
-          refresh_token: localStorageService.getRefreshToken(),
+          refresh_token: LocalStorageService.getRefreshToken(),
         })
         .then((res) => {
           if (res.status === 201) {
             // 1) put token to LocalStorage
-            localStorageService.setToken(res.data);
+            LocalStorageService.setToken(res.data);
 
             // 2) Change Authorization header
             axios.defaults.headers.common.Authorization =
-              "Bearer " + localStorageService.getAccessToken();
+              "Bearer " + LocalStorageService.getAccessToken();
 
             // 3) return originalRequest object with Axios.
             return axios(originalRequest);
