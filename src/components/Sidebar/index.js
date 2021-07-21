@@ -52,7 +52,7 @@ export default function Sidebar({ toggleSidebar, setToggleSidebar }) {
             <InputPrice placeholder="Min" size="small" bordered prefix="$" />
             <InputPrice placeholder="Max" bordered prefix="$" />
           </PriceRange>
-          <Btn primary>Set Price</Btn>
+          <Btn primary="true">Set Price</Btn>
         </Pricing>
         <Rating>
           <Text fontWeight={FONT.bold}>Rating</Text>

@@ -65,7 +65,7 @@ export default function Main({
           </Search>
           <Sorting>
             <SortButtons>
-              <Btn primary>Relevance</Btn>
+              <Btn primary="true">Relevance</Btn>
               <Btn>Relevance</Btn>
               <Btn>Relevance</Btn>
               <Btn>Relevance</Btn>

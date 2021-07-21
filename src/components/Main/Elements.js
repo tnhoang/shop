@@ -76,8 +76,6 @@ export const ListCard = styled.div`
   flex-wrap: wrap;
   justify-content: space-around;
 
-  border: 1px solid green;
-
   margin-top: 25px;
   column-gap: 10px;
   row-gap: 20px;
