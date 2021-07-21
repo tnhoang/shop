@@ -1,22 +1,20 @@
-import React from "react";
-import { Col } from "antd";
 import { LeftOutlined } from "@ant-design/icons";
-
+import { Col } from "antd";
+import React from "react";
 import { COLOR, FONT } from "../../constants/css";
-import { Text, Btn } from "../base";
+import { Btn, Text } from "../base";
 import { HeaderButtons, HearderButton } from "../Main/Elements";
-
 import {
-  ContainerBig,
-  PreviewContainer,
-  PreviewHeader,
   ClosePreview,
-  PreviewDetail,
+  ContainerBig,
   Img,
   ListImg,
+  PreviewButtons,
+  PreviewContainer,
+  PreviewDetail,
+  PreviewHeader,
   Tabs,
   Taolaohere,
-  PreviewButtons,
 } from "./Elements";
 
 export default function ItemPreview({ toggleProps, previewObj }) {
@@ -53,7 +51,7 @@ export default function ItemPreview({ toggleProps, previewObj }) {
           </Text>
           <PreviewButtons>
             <Btn></Btn>
-            <Btn primary large>
+            <Btn primary="true" large="true">
               Add to cart
             </Btn>
           </PreviewButtons>

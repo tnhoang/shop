@@ -1,26 +1,23 @@
-import React from "react";
+import { MenuOutlined, SearchOutlined } from "@ant-design/icons";
 import { Input } from "antd";
-import { SearchOutlined, MenuOutlined } from "@ant-design/icons";
-
+import React from "react";
 import { COLOR, FONT } from "../../constants/css";
+import { useStoreTest } from "../../useStore";
 import { Btn, Text } from "../base";
-import Card from "./Card";
 import {
+  Body,
+  BodyContainer,
   Container,
   Header,
   LeftHeader,
   MenuBarMobile,
   RightHeader,
-  Body,
-  BodyContainer,
   Search,
   SearchDescription,
-  Sorting,
   SortButtons,
-  ListCard,
+  Sorting,
 } from "./Elements";
-
-import ListCardTest from "./ListCardTest";
+import ListCard from "./ListCard";
 
 export default function Main({
   setTogglePreview,
@@ -29,8 +26,6 @@ export default function Main({
 }) {
   return (
     <Container>
-      <ListCardTest />
-
       <Header>
         <LeftHeader>
           <MenuBarMobile>
@@ -77,21 +72,7 @@ export default function Main({
               <Btn>Hello</Btn>
             </SortButtons>
           </Sorting>
-          <ListCard>
-            {[1, 2, 3, 4].map((c) => (
-              <Card
-                img=""
-                title={"sdfdsf" + c}
-                rating="1"
-                ratingCount={123}
-                price="213"
-                key={c}
-                onClick={() => console.log(123)}
-                setPreviewObj={setPreviewObj}
-                setTogglePreview={setTogglePreview}
-              />
-            ))}
-          </ListCard>
+          <ListCard />
         </BodyContainer>
       </Body>
     </Container>
