@@ -1,11 +1,29 @@
-export const getAllBooks = async () => {
-  const response = await fetch(`${process.env.REACT_APP_API_SERVER}/books`);
+import axiosClient from "./axiosClient";
+import LocalStorageService from "./localStorageService";
 
-  if (!response.ok) {
+export const getAllBooks = async () => {
+  const response = await axiosClient.get(`${process.env.REACT_APP_API_SERVER}`);
+
+  if (response.status !== 200) {
     throw new Error("Something went wrong.");
   }
 
-  return response.json();
+  return response.data;
+};
+
+export const authentication = async () => {
+  const [username, password] = ["qwe", "password"];
+  const response = await axiosClient.post("http://0.0.0.0:8002/login", {
+    username: username,
+    password: password,
+  });
+
+  const obj = {
+    access_token: response.data.access_token,
+    refresh_token: response.data.refresh_token,
+  };
+
+  LocalStorageService.setToken(obj);
 };
 
 export const getBook = async ({ queryKey }) => {
