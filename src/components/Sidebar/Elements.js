@@ -40,9 +40,8 @@ export const Wrapper = styled.div`
 `;
 
 export const Header = styled.div`
-  position: relative;
-
   display: flex;
+  justify-content: space-between;
   align-items: center;
 
   height: ${HEADER.height};
@@ -52,7 +51,6 @@ export const Header = styled.div`
 `;
 
 export const SidebarToggle = styled.div`
-  position: absolute;
   top: 1.2rem;
   right: 0.4rem;
 

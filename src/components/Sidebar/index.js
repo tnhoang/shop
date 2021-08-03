@@ -28,12 +28,12 @@ export default function Sidebar() {
     <Container sidebarState={sidebarState}>
       <Wrapper>
         <Header>
-          <Text fontSize={FONT.large} fontWeight={FONT.bold}>
-            🎄 OYOTEE
-          </Text>
           <SidebarToggle onClick={toggleSidebar}>
             <LeftOutlined style={{ fontSize: "1.2rem" }} />
           </SidebarToggle>
+          <Text fontSize={FONT.large} fontWeight={FONT.bold}>
+            OYOTEE 🎄
+          </Text>
         </Header>
         <Filter>
           <Text fontWeight={FONT.bold}>Filter</Text>
