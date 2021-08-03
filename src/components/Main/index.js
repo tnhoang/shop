@@ -19,7 +19,7 @@ import {
 } from "./Elements";
 import ListCard from "./ListCard";
 
-export default function Main({}) {
+export default function Main() {
   const toggleSidebar = useStore((state) => state.toggleSidebar);
 
   return (
