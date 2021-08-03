@@ -37,7 +37,6 @@ export default function ListCard() {
             ratingCount={123}
             price="213"
             key={c}
-            onClick={() => console.log(123)}
           />
         ))}
       </ListCardContainer>

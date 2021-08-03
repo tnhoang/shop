@@ -2,6 +2,7 @@ import { MenuOutlined, SearchOutlined } from "@ant-design/icons";
 import { Input } from "antd";
 import React from "react";
 import { COLOR, FONT } from "../../constants/css";
+import { useStore } from "../../useStore";
 import { Btn, Text } from "../base";
 import {
   Body,
@@ -18,18 +19,16 @@ import {
 } from "./Elements";
 import ListCard from "./ListCard";
 
-export default function Main({
-  setTogglePreview,
-  setToggleSidebar,
-  setPreviewObj,
-}) {
+export default function Main({}) {
+  const toggleSidebar = useStore((state) => state.toggleSidebar);
+
   return (
     <Container>
       <Header>
         <LeftHeader>
           <MenuBarMobile>
             <MenuOutlined
-              onClick={() => setToggleSidebar(true)}
+              onClick={toggleSidebar}
               style={{ fontSize: "1.2rem" }}
             />
           </MenuBarMobile>

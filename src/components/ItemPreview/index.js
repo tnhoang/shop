@@ -2,6 +2,7 @@ import { LeftOutlined } from "@ant-design/icons";
 import { Col } from "antd";
 import React from "react";
 import { COLOR, FONT } from "../../constants/css";
+import { useStore } from "../../useStore";
 import { Btn, Text } from "../base";
 import { HeaderButtons, HearderButton } from "../Main/Elements";
 import {
@@ -17,13 +18,15 @@ import {
   Taolaohere,
 } from "./Elements";
 
-export default function ItemPreview({ toggleProps, previewObj }) {
-  const [togglePreview, setTogglePreview] = toggleProps;
+export default function ItemPreview() {
+  const previewState = useStore((state) => state.previewState);
+  const togglePreview = useStore((state) => state.togglePreview);
+  const previewObj = { title: "title here" };
   return (
-    <ContainerBig togglePreview={togglePreview}>
+    <ContainerBig previewState={previewState}>
       <PreviewContainer>
         <PreviewHeader>
-          <ClosePreview onClick={() => setTogglePreview(() => false)}>
+          <ClosePreview onClick={togglePreview}>
             <LeftOutlined style={{ fontSize: "1.2rem" }} />
           </ClosePreview>
         </PreviewHeader>

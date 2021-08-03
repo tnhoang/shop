@@ -18,16 +18,20 @@ import {
   Ads,
   SidebarToggle,
 } from "./Elements";
+import { useStore } from "../../useStore";
 
-export default function Sidebar({ toggleSidebar, setToggleSidebar }) {
+export default function Sidebar() {
+  const sidebarState = useStore((state) => state.sidebarState);
+  const toggleSidebar = useStore((state) => state.toggleSidebar);
+
   return (
-    <Container toggleSidebar={toggleSidebar}>
+    <Container sidebarState={sidebarState}>
       <Wrapper>
         <Header>
           <Text fontSize={FONT.large} fontWeight={FONT.bold}>
             🎄 OYOTEE
           </Text>
-          <SidebarToggle onClick={() => setToggleSidebar(false)}>
+          <SidebarToggle onClick={toggleSidebar}>
             <LeftOutlined style={{ fontSize: "1.2rem" }} />
           </SidebarToggle>
         </Header>

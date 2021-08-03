@@ -13,7 +13,7 @@ export const ContainerBig = styled.div`
     height: 100%;
 
     background-color: #fff;
-    ${({ togglePreview }) => (togglePreview ? `right: 0;` : `right: -200%;`)}
+    ${({ previewState }) => (previewState ? `right: 0;` : `right: -200%;`)}
   }
   @media (min-width: 767px) {
     display: block;

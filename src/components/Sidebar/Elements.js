@@ -15,8 +15,8 @@ export const Container = styled.div`
     background-color: #fff;
 
     transition: 0.2s ease-in-out;
-    ${({ toggleSidebar }) =>
-      toggleSidebar
+    ${({ sidebarState }) =>
+      sidebarState
         ? `
           left:0;
           opacity: 100%;
