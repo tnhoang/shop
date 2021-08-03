@@ -11,7 +11,7 @@ export default function Card({ title, rating, ratingCount, price }) {
   const setPreviewObj = useStore((state) => state.setPreviewObj);
 
   const onSelectingCard = () => {
-    setPreviewObj({ title: title });
+    setPreviewObj({ title, rating, ratingCount, price });
     togglePreview();
   };
   return (
@@ -24,7 +24,7 @@ export default function Card({ title, rating, ratingCount, price }) {
           <Text fontSize={FONT.small} color={COLOR.textLight}>
             Price
           </Text>
-          <Text fontWeight="bold">$ 325</Text>
+          <Text fontWeight="bold">$ {price}</Text>
         </Price>
         <Button shape="round" size="large">
           <Text fontWeight="bold">Add to cart</Text>

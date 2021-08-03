@@ -21,7 +21,8 @@ import {
 export default function ItemPreview() {
   const previewState = useStore((state) => state.previewState);
   const togglePreview = useStore((state) => state.togglePreview);
-  const previewObj = { title: "title here" };
+  const previewObj = useStore((state) => state.previewObj);
+
   return (
     <ContainerBig previewState={previewState}>
       <PreviewContainer>
@@ -46,7 +47,9 @@ export default function ItemPreview() {
               <Img width="400px" height="80px"></Img>
             </Col>
           </ListImg>
-          <Text fontSize={FONT.xlarge}>{previewObj.title}</Text>
+          <Text fontSize={FONT.xlarge}>
+            {previewObj.title ? previewObj.title : "None"}
+          </Text>
           <Text color={COLOR.textLight}>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet
             officia nisi amet, in iure tenetur dicta explicabo inventore nam

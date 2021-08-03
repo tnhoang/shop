@@ -4,10 +4,19 @@ import LocalStorageService from "../store/localStorageService";
 const delay = async (time) => {
   await new Promise((res) => setTimeout(res, time));
 };
+const randomRange = (min, max) => Math.floor(Math.random() * max) + min;
+const randomStar = () => randomRange(1, 5);
+const randomRatingCount = () => randomRange(1, 200);
+const titles = ["Title1", "Title2", "Title3", "Title4"];
 
 export const getAllBooks = async () => {
-  await delay(1000);
-  return [1, 2, 3];
+  await delay(50);
+  return titles.map((title) => ({
+    title,
+    rating: randomStar(),
+    ratingCount: randomRatingCount(),
+    price: randomRange(1, 1000),
+  }));
 };
 
 export const authentication = async () => {

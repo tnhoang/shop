@@ -29,14 +29,14 @@ export default function ListCard() {
   return (
     <>
       <ListCardContainer>
-        {data?.map((c) => (
+        {data?.map((c, i) => (
           <Card
             img=""
             title={c.title}
-            rating="1"
-            ratingCount={123}
-            price="213"
-            key={c}
+            rating={c.rating}
+            ratingCount={c.ratingCount}
+            price={c.price}
+            key={i}
           />
         ))}
       </ListCardContainer>
