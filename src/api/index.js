@@ -1,5 +1,5 @@
 import axiosClient from "./axiosClient";
-import LocalStorageService from "./localStorageService";
+import LocalStorageService from "../store/localStorageService";
 
 const delay = async (time) => {
   await new Promise((res) => setTimeout(res, time));
