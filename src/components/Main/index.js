@@ -2,7 +2,6 @@ import { MenuOutlined, SearchOutlined } from "@ant-design/icons";
 import { Input } from "antd";
 import React from "react";
 import { COLOR, FONT } from "../../constants/css";
-import { useStoreTest } from "../../useStore";
 import { Btn, Text } from "../base";
 import {
   Body,
@@ -24,13 +23,8 @@ export default function Main({
   setToggleSidebar,
   setPreviewObj,
 }) {
-  const bear = useStoreTest((state) => state.bear);
-  const incBear = useStoreTest((state) => state.incBear);
-
   return (
     <Container>
-      bear {bear}
-      <button onClick={incBear}>+</button>
       <Header>
         <LeftHeader>
           <MenuBarMobile>
