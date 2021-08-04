@@ -7,7 +7,12 @@ const delay = async (time) => {
 const randomRange = (min, max) => Math.floor(Math.random() * max) + min;
 const randomStar = () => randomRange(1, 5);
 const randomRatingCount = () => randomRange(1, 200);
-const titles = ["Title1", "Title2", "Title3", "Title4"];
+const titles = [
+  "Monstera DK Var (L)",
+  "Monstera Deliciosa",
+  "Monstera DK Var (L)",
+  "Monstera Deliciosa",
+];
 
 export const getAllBooks = async () => {
   await delay(50);

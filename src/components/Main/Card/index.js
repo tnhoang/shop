@@ -17,7 +17,9 @@ export default function Card({ title, rating, ratingCount, price }) {
   return (
     <CardContainer onClick={onSelectingCard}>
       <Img src="" />
-      <Text fontSize={FONT.large}>{title}</Text>
+      <Text fontSize={FONT.large} fontWeight={FONT.bold}>
+        {title}
+      </Text>
       <Rate quantity rateCount={ratingCount} value={rating} disabled />
       <PriceContainer price={price}>
         <Price>
@@ -26,8 +28,14 @@ export default function Card({ title, rating, ratingCount, price }) {
           </Text>
           <Text fontWeight="bold">$ {price}</Text>
         </Price>
-        <Button shape="round" size="large">
-          <Text fontWeight="bold">Add to cart</Text>
+        <Button
+          style={{
+            borderRadius: "12px",
+            padding: "0px 22px",
+          }}
+          size="large"
+        >
+          <Text>Add to cart</Text>
         </Button>
       </PriceContainer>
     </CardContainer>

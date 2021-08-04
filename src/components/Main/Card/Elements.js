@@ -17,13 +17,10 @@ export const CardContainer = styled.div`
 `;
 export const Img = styled.div`
   height: 300px;
-  background-image: linear-gradient(
-    43deg,
-    #4158d0 0%,
-    #c850c0 46%,
-    #ffcc70 100%
-  );
+  background-image: url("https://m.media-amazon.com/images/I/71z+RZ09EzL._AC_SX466_.jpg");
+  background-size: cover;
 
+  margin-bottom: 10px;
   @media (min-width: 768px) {
     height: 240px;
   }
