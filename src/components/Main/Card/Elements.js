@@ -7,12 +7,21 @@ export const CardContainer = styled.div`
 
   border: 1px solid ${COLOR.border};
   border-radius: 28px;
+  box-shadow: rgba(0, 0, 0, 0.03) 0px 8px 24px;
+  transition: 0.2s all ease-in-out;
+
+  cursor: pointer;
 
   @media (max-width: 768px) {
     max-width: 450px;
   }
   @media (min-width: 768px) {
     width: 320px;
+  }
+
+  &:hover {
+    transition: 0.2s all ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 8px 24px;
   }
 `;
 export const Img = styled.div`
