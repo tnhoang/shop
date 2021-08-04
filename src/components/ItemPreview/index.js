@@ -34,16 +34,16 @@ export default function ItemPreview() {
         <PreviewDetail>
           <Img width="450px" height="290px"></Img>
           <ListImg>
-            <Col span="6">
+            <Col span="5">
               <Img width="400px" height="80px"></Img>
             </Col>
-            <Col span="6">
+            <Col span="5">
               <Img width="400px" height="80px"></Img>
             </Col>
-            <Col span="6">
+            <Col span="5">
               <Img width="400px" height="80px"></Img>
             </Col>
-            <Col span="6">
+            <Col span="5">
               <Img width="400px" height="80px"></Img>
             </Col>
           </ListImg>

@@ -66,6 +66,8 @@ export const Tabs = styled.div`
   height: 48px;
 `;
 
-export const Taolaohere = styled.div``;
+export const Taolaohere = styled.div`
+  margin-top: 20px;
+`;
 
 export const PreviewButtons = styled.div``;
