@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 import { COLOR, HEADER, PADDING } from "../../constants/css";
 
+const PaddingTitle = "12px 30px";
+
 export const Container = styled.div`
   @media (max-width: 1100px) {
     position: fixed;
@@ -13,6 +15,7 @@ export const Container = styled.div`
     height: 100vh;
     width: 230px;
     background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.4) 50px 0px 90px;
 
     transition: 0.2s ease-in-out;
     ${({ sidebarState }) =>
@@ -61,12 +64,12 @@ export const SidebarToggle = styled.div`
 `;
 
 export const Filter = styled.div`
-  padding: ${PADDING};
+  padding: ${PaddingTitle};
   border-bottom: 1px solid ${COLOR.border};
 `;
 
 export const Categories = styled.div`
-  padding: ${PADDING};
+  padding: ${PaddingTitle};
   border-bottom: 1px solid ${COLOR.border};
 `;
 
@@ -79,7 +82,7 @@ export const CategoriesSelection = styled.div`
 export const Pricing = styled.div`
   display: grid;
   gap: 18px;
-  padding: ${PADDING};
+  padding: ${PaddingTitle};
   border-bottom: 1px solid ${COLOR.border};
 `;
 
@@ -96,14 +99,13 @@ export const InputPrice = styled(Input)`
 `;
 
 export const Rating = styled.div`
-  padding: ${PADDING};
+  padding: ${PaddingTitle};
   border-bottom: 1px solid ${COLOR.border};
 `;
 
 export const Ads = styled.div`
   width: 100%;
   height: 100%;
-  padding: ${PADDING};
 
   background-color: silver;
 `;
