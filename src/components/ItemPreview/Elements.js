@@ -50,6 +50,9 @@ export const Img = styled.div`
 
   background-color: silver;
   border-radius: 12px;
+
+  background-image: url("https://m.media-amazon.com/images/I/71z+RZ09EzL._AC_SX466_.jpg");
+  background-size: cover;
 `;
 
 export const ListImg = styled.div`
@@ -67,7 +70,7 @@ export const Tabs = styled.div`
 `;
 
 export const Taolaohere = styled.div`
-  margin-top: 20px;
+  margin-top: 30px;
 `;
 
 export const PreviewButtons = styled.div``;
