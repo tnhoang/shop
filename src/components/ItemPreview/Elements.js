@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { HEADER } from "../../constants/css";
+import { COLOR, HEADER } from "../../constants/css";
 
 export const ContainerBig = styled.div`
   overflow-y: scroll;
@@ -74,3 +74,36 @@ export const Taolaohere = styled.div`
 `;
 
 export const PreviewButtons = styled.div``;
+
+// TODO: re-organize these components
+export const HeaderButtons = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  padding: 10px auto;
+  column-gap: 40px;
+`;
+
+export const HearderButton = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+  padding: 12px 20px;
+
+  color: ${COLOR.textLight};
+  font-size: 1rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  ${({ active }) =>
+    active
+      ? `
+    border-bottom: 3px solid ${COLOR.primary};
+    color: ${COLOR.text};
+  `
+      : ``};
+`;

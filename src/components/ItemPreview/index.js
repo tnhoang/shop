@@ -4,7 +4,7 @@ import React from "react";
 import { COLOR, FONT } from "../../constants/css";
 import { useStore } from "../../useStore";
 import { Btn, Text } from "../base";
-import { HeaderButtons, HearderButton } from "../Main/Elements";
+import { HeaderButtons, HearderButton } from "./Elements";
 import {
   ClosePreview,
   ContainerBig,

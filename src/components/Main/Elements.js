@@ -86,28 +86,4 @@ export const SearchDescription = styled.div`
   margin-top: 6px;
 `;
 
-// TODO: re-organize these components
-export const HeaderButtons = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-`;
 
-export const HearderButton = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 100%;
-  height: 100%;
-  padding: 12px 20px;
-
-  color: ${COLOR.textLight};
-
-  ${({ active }) =>
-    active
-      ? `
-    border-bottom: 3px solid ${COLOR.primary};
-    color: ${COLOR.text};
-  `
-      : ``};
-`;
