@@ -18,7 +18,7 @@ import {
   Ads,
   SidebarToggle,
 } from "./Elements";
-import { useStore } from "../../useStore";
+import { useStore } from "../../store/useStore";
 
 export default function Sidebar() {
   const sidebarState = useStore((state) => state.sidebarState);

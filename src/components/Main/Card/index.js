@@ -4,7 +4,7 @@ import { Button } from "antd";
 import { Rate, Text } from "../../base";
 import { COLOR, FONT } from "../../../constants/css";
 import { CardContainer, Img, PriceContainer, Price } from "./Elements";
-import { useStore } from "../../../useStore";
+import { useStore } from "../../../store/useStore";
 
 export default function Card({ title, rating, ratingCount, price }) {
   const togglePreview = useStore((state) => state.togglePreview);

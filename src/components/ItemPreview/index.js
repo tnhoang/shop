@@ -2,7 +2,7 @@ import { LeftOutlined } from "@ant-design/icons";
 import { Col } from "antd";
 import React from "react";
 import { COLOR, FONT } from "../../constants/css";
-import { useStore } from "../../useStore";
+import { useStore } from "../../store/useStore";
 import { Btn, Text } from "../base";
 import { HeaderButtons, HearderButton } from "./Elements";
 import {
