@@ -1,10 +1,24 @@
 import Home from "./pages/home";
+import SignIn from "./pages/signin";
+import SignUp from "./pages/signup";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from "react-router-dom";
+// import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
-    <>
-      <Home />
-    </>
+    <Router>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/signin" component={SignIn} />
+        <Route path="/signup" component={SignUp} />
+        <Redirect to="/" />
+      </Switch>
+    </Router>
   );
 }
 
