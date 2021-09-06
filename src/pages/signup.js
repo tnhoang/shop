@@ -1,12 +1,12 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Button, Input } from "antd";
+import { Button } from "antd";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import * as yup from "yup";
-import { signIn, signUp } from "../api";
+import { signUp } from "../api";
 import { Text } from "../components/base";
 import { FONT } from "../constants/css";
 
@@ -55,15 +55,11 @@ export default function SignUp() {
 
   const history = useHistory();
 
-  const { isError, error, isLoading, mutateAsync } = useMutation(
-    "signUp",
-    signUp,
-    {
-      onSuccess: ({ message }) => {
-        history.push("/signin");
-      },
-    }
-  );
+  const { error, isLoading, mutateAsync } = useMutation("signUp", signUp, {
+    onSuccess: ({ message }) => {
+      history.push("/signin");
+    },
+  });
   return (
     <Container>
       <HeaderWrapper>

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import { MenuOutlined, SearchOutlined } from "@ant-design/icons";
-=======
-import React, { useState, useEffect } from "react";
->>>>>>> d6becd7... stash: call product api
 import { Input } from "antd";
 import React from "react";
 import { useHistory } from "react-router-dom";
