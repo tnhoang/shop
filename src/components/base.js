@@ -48,7 +48,7 @@ export const Rate = ({ value, rateCount, disabled }) => {
   return (
     <>
       <RateAnt
-        style={{ "font-size": "1rem", color: "#FFC427" }}
+        style={{ fontSize: "1rem", color: "#FFC427" }}
         allowHalf
         disabled={disabled}
         defaultValue={Number.parseFloat(value)}

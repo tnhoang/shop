@@ -3,6 +3,8 @@ import styled from "styled-components";
 
 import { COLOR, HEADER, PADDING } from "../../constants/css";
 
+const PaddingTitle = "12px 30px";
+
 export const Container = styled.div`
   @media (max-width: 1100px) {
     position: fixed;
@@ -13,10 +15,11 @@ export const Container = styled.div`
     height: 100vh;
     width: 230px;
     background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.4) 50px 0px 90px;
 
     transition: 0.2s ease-in-out;
-    ${({ toggleSidebar }) =>
-      toggleSidebar
+    ${({ sidebarState }) =>
+      sidebarState
         ? `
           left:0;
           opacity: 100%;
@@ -40,9 +43,8 @@ export const Wrapper = styled.div`
 `;
 
 export const Header = styled.div`
-  position: relative;
-
   display: flex;
+  justify-content: space-between;
   align-items: center;
 
   height: ${HEADER.height};
@@ -52,7 +54,6 @@ export const Header = styled.div`
 `;
 
 export const SidebarToggle = styled.div`
-  position: absolute;
   top: 1.2rem;
   right: 0.4rem;
 
@@ -63,12 +64,12 @@ export const SidebarToggle = styled.div`
 `;
 
 export const Filter = styled.div`
-  padding: ${PADDING};
+  padding: ${PaddingTitle};
   border-bottom: 1px solid ${COLOR.border};
 `;
 
 export const Categories = styled.div`
-  padding: ${PADDING};
+  padding: ${PaddingTitle};
   border-bottom: 1px solid ${COLOR.border};
 `;
 
@@ -81,7 +82,7 @@ export const CategoriesSelection = styled.div`
 export const Pricing = styled.div`
   display: grid;
   gap: 18px;
-  padding: ${PADDING};
+  padding: ${PaddingTitle};
   border-bottom: 1px solid ${COLOR.border};
 `;
 
@@ -98,14 +99,13 @@ export const InputPrice = styled(Input)`
 `;
 
 export const Rating = styled.div`
-  padding: ${PADDING};
+  padding: ${PaddingTitle};
   border-bottom: 1px solid ${COLOR.border};
 `;
 
 export const Ads = styled.div`
   width: 100%;
   height: 100%;
-  padding: ${PADDING};
 
   background-color: silver;
 `;

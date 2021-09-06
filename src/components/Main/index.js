@@ -1,44 +1,52 @@
-import React from "react";
+import { MenuOutlined, SearchOutlined } from "@ant-design/icons";
 import { Input } from "antd";
-import { SearchOutlined, MenuOutlined } from "@ant-design/icons";
-
+import React from "react";
+import { useHistory } from "react-router-dom";
 import { COLOR, FONT } from "../../constants/css";
+import LocalStorageService from "../../store/localStorageService";
+import { useStore } from "../../store/useStore";
 import { Btn, Text } from "../base";
-import Card from "./Card";
 import {
+  Body,
+  BodyContainer,
   Container,
   Header,
   LeftHeader,
   MenuBarMobile,
   RightHeader,
-  Body,
-  BodyContainer,
   Search,
   SearchDescription,
-  Sorting,
   SortButtons,
-  ListCard,
+  Sorting,
 } from "./Elements";
+import ListCard from "./ListCard";
 
-export default function Main({
-  setTogglePreview,
-  setToggleSidebar,
-  setPreviewObj,
-}) {
+export default function Main() {
+  const toggleSidebar = useStore((state) => state.toggleSidebar);
+
+  const history = useHistory();
+  const logout = () => {
+    LocalStorageService.clearToken();
+    history.push("/");
+  };
   return (
     <Container>
       <Header>
         <LeftHeader>
           <MenuBarMobile>
             <MenuOutlined
-              onClick={() => setToggleSidebar(true)}
+              onClick={toggleSidebar}
               style={{ fontSize: "1.2rem" }}
             />
           </MenuBarMobile>
         </LeftHeader>
         <RightHeader>
-          <Btn>A</Btn>
-          <Btn>B</Btn>
+          {LocalStorageService.getAccessToken() ? (
+            <Btn onClick={logout}>Logout</Btn>
+          ) : (
+            <Btn onClick={() => history.push("/signin")}>Sign In</Btn>
+          )}
+          {/* <Btn>B</Btn> */}
         </RightHeader>
       </Header>
       <Body>
@@ -61,7 +69,7 @@ export default function Main({
           </Search>
           <Sorting>
             <SortButtons>
-              <Btn primary>Relevance</Btn>
+              <Btn primary="true">Relevance</Btn>
               <Btn>Relevance</Btn>
               <Btn>Relevance</Btn>
               <Btn>Relevance</Btn>
@@ -73,21 +81,7 @@ export default function Main({
               <Btn>Hello</Btn>
             </SortButtons>
           </Sorting>
-          <ListCard>
-            {[1, 2, 3, 4].map((c) => (
-              <Card
-                img=""
-                title={"sdfdsf" + c}
-                rating="1"
-                ratingCount={123}
-                price="213"
-                key={c}
-                onClick={() => console.log(123)}
-                setPreviewObj={setPreviewObj}
-                setTogglePreview={setTogglePreview}
-              />
-            ))}
-          </ListCard>
+          <ListCard />
         </BodyContainer>
       </Body>
     </Container>

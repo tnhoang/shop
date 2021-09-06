@@ -1,14 +1,9 @@
 import styled from "styled-components";
-import { HEADER } from "../../constants/css";
+import { COLOR, HEADER } from "../../constants/css";
 
 export const ContainerBig = styled.div`
-  @media (min-width: 767px) {
-    display: block;
-    width: 450px;
-    height: 100vh;
+  overflow-y: scroll;
 
-    overflow-y: scroll;
-  }
   @media (max-width: 767px) {
     position: fixed;
 
@@ -18,7 +13,12 @@ export const ContainerBig = styled.div`
     height: 100%;
 
     background-color: #fff;
-    ${({ togglePreview }) => (togglePreview ? `right: 0;` : `right: -200%;`)}
+    ${({ previewState }) => (previewState ? `right: 0;` : `right: -200%;`)}
+  }
+  @media (min-width: 767px) {
+    display: block;
+    width: 450px;
+    height: 100vh;
   }
 `;
 
@@ -50,6 +50,9 @@ export const Img = styled.div`
 
   background-color: silver;
   border-radius: 12px;
+
+  background-image: url("https://m.media-amazon.com/images/I/71z+RZ09EzL._AC_SX466_.jpg");
+  background-size: cover;
 `;
 
 export const ListImg = styled.div`
@@ -66,6 +69,41 @@ export const Tabs = styled.div`
   height: 48px;
 `;
 
-export const Taolaohere = styled.div``;
+export const Taolaohere = styled.div`
+  margin-top: 30px;
+`;
 
 export const PreviewButtons = styled.div``;
+
+// TODO: re-organize these components
+export const HeaderButtons = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  padding: 10px auto;
+  column-gap: 40px;
+`;
+
+export const HearderButton = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+  padding: 12px 20px;
+
+  color: ${COLOR.textLight};
+  font-size: 1rem;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  ${({ active }) =>
+    active
+      ? `
+    border-bottom: 3px solid ${COLOR.primary};
+    color: ${COLOR.text};
+  `
+      : ``};
+`;

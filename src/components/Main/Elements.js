@@ -67,11 +67,18 @@ export const SortButtons = styled.div`
 `;
 
 export const ListCard = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  // Auto scale cards by width but it justify content at start
+  /* display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 
   margin-top: 25px;
-  gap: 10px;
+  column-gap: 10px;
+  row-gap: 20px;
 `;
 
 export const SearchDescription = styled.div`
@@ -79,28 +86,4 @@ export const SearchDescription = styled.div`
   margin-top: 6px;
 `;
 
-// TODO: re-organize these components
-export const HeaderButtons = styled.div`
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-`;
 
-export const HearderButton = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 100%;
-  height: 100%;
-  padding: 0 20px;
-
-  color: ${COLOR.textLight};
-
-  ${({ active }) =>
-    active
-      ? `
-    border-bottom: 3px solid ${COLOR.primary};
-    color: ${COLOR.text};
-  `
-      : ``};
-`;
