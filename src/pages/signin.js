@@ -1,5 +1,5 @@
 import { yupResolver } from "@hookform/resolvers/yup";
-import { Button, Input } from "antd";
+import { Button } from "antd";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
@@ -38,16 +38,12 @@ export default function SignIn() {
 
   const history = useHistory();
 
-  const { isError, error, isLoading, mutateAsync } = useMutation(
-    "login",
-    signIn,
-    {
-      onSuccess: ({ access_token, refresh_token }) => {
-        LocalStorageService.setToken({ access_token, refresh_token });
-        history.push("/");
-      },
-    }
-  );
+  const { error, isLoading, mutateAsync } = useMutation("login", signIn, {
+    onSuccess: ({ access_token, refresh_token }) => {
+      LocalStorageService.setToken({ access_token, refresh_token });
+      history.push("/");
+    },
+  });
   return (
     <Container>
       <HeaderWrapper>
