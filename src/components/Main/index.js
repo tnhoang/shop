@@ -1,7 +1,9 @@
 import { MenuOutlined, SearchOutlined } from "@ant-design/icons";
 import { Input } from "antd";
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { COLOR, FONT } from "../../constants/css";
+import LocalStorageService from "../../store/localStorageService";
 import { useStore } from "../../store/useStore";
 import { Btn, Text } from "../base";
 import {
@@ -22,6 +24,11 @@ import ListCard from "./ListCard";
 export default function Main() {
   const toggleSidebar = useStore((state) => state.toggleSidebar);
 
+  const history = useHistory();
+  const logout = () => {
+    LocalStorageService.clearToken();
+    history.push("/");
+  };
   return (
     <Container>
       <Header>
@@ -34,8 +41,12 @@ export default function Main() {
           </MenuBarMobile>
         </LeftHeader>
         <RightHeader>
-          <Btn>A</Btn>
-          <Btn>B</Btn>
+          {LocalStorageService.getAccessToken() ? (
+            <Btn onClick={logout}>Logout</Btn>
+          ) : (
+            <Btn onClick={() => history.push("/signin")}>Sign In</Btn>
+          )}
+          {/* <Btn>B</Btn> */}
         </RightHeader>
       </Header>
       <Body>
