@@ -1,7 +1,7 @@
 import React from "react";
 import Loader from "react-loader-spinner";
 import styled from "styled-components";
-import BookQuery from "../../../store/queries";
+import ProductQuery from "../../../store/queries";
 import Card from "../Card";
 
 export const ListCardContainer = styled.div`
@@ -16,7 +16,7 @@ export const ListCardContainer = styled.div`
 `;
 
 export default function ListCard() {
-  const { data, error, isLoading, isError } = BookQuery();
+  const { data, error, isLoading, isError } = ProductQuery();
 
   if (isLoading) {
     return <Loader type="ThreeDots" color="#cccccc" height={30} />;
