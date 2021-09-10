@@ -2,7 +2,7 @@ import axios from "axios";
 import queryString from "query-string";
 import LocalStorageService from "../store/localStorageService";
 
-const axiosClient = axios.create({
+const client = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
   headers: {
     "content-type": "application/json",
@@ -10,7 +10,7 @@ const axiosClient = axios.create({
   paramsSerializer: (params) => queryString.stringify(params),
 });
 
-axiosClient.interceptors.request.use(
+client.interceptors.request.use(
   (config) => {
     const token = LocalStorageService.getAccessToken();
     if (token) {
@@ -23,7 +23,7 @@ axiosClient.interceptors.request.use(
   }
 );
 
-axiosClient.interceptors.response.use(
+client.interceptors.response.use(
   (response) => {
     return response;
   }
@@ -53,4 +53,4 @@ axiosClient.interceptors.response.use(
   // }
 );
 
-export default axiosClient;
+export default client;

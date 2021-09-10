@@ -2,9 +2,9 @@ import { MenuOutlined, SearchOutlined } from "@ant-design/icons";
 import { Input } from "antd";
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { COLOR, FONT } from "../../constants/css";
 import LocalStorageService from "../../store/localStorageService";
 import { useStore } from "../../store/useStore";
+import { COLOR, FONT } from "../../utils/constants/css";
 import { Btn, Text } from "../base";
 import {
   Body,
@@ -42,11 +42,13 @@ export default function Main() {
         </LeftHeader>
         <RightHeader>
           {LocalStorageService.getAccessToken() ? (
-            <Btn onClick={logout}>Logout</Btn>
+            <>
+              <span>Hello &nbsp;</span>
+              <Btn onClick={logout}>Logout</Btn>
+            </>
           ) : (
             <Btn onClick={() => history.push("/signin")}>Sign In</Btn>
           )}
-          {/* <Btn>B</Btn> */}
         </RightHeader>
       </Header>
       <Body>
@@ -70,15 +72,10 @@ export default function Main() {
           <Sorting>
             <SortButtons>
               <Btn primary="true">Relevance</Btn>
+              <Btn>Popular</Btn>
+              <Btn>Most New</Btn>
               <Btn>Relevance</Btn>
-              <Btn>Relevance</Btn>
-              <Btn>Relevance</Btn>
-              <Btn>Hello</Btn>
-              <Btn>Hello</Btn>
-              <Btn>Hello</Btn>
-              <Btn>Hello</Btn>
-              <Btn>Hello</Btn>
-              <Btn>Hello</Btn>
+              <Btn>Price</Btn>
             </SortButtons>
           </Sorting>
           <ListCard />

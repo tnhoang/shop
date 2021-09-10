@@ -1,12 +1,12 @@
-import Home from "./pages/home";
-import SignIn from "./pages/signin";
-import SignUp from "./pages/signup";
 import {
   BrowserRouter as Router,
   Redirect,
   Route,
   Switch,
 } from "react-router-dom";
+import Home from "./pages/home";
+import SignIn from "./pages/signin";
+import SignUp from "./pages/signup";
 // import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {

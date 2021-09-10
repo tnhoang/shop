@@ -1,7 +1,7 @@
 import React from "react";
 import Loader from "react-loader-spinner";
 import styled from "styled-components";
-import BookQuery from "../../../store/queries";
+import ProductQuery from "../../../store/queries";
 import Card from "../Card";
 
 export const ListCardContainer = styled.div`
@@ -16,10 +16,10 @@ export const ListCardContainer = styled.div`
 `;
 
 export default function ListCard() {
-  const { data, error, isLoading, isError } = BookQuery();
+  const { data, error, isLoading, isError } = ProductQuery();
 
   if (isLoading) {
-    return <Loader type="ThreeDots" color="#cccccc" height={30} />;
+    return <Loader type="ThreeDots" height={30} />;
   }
 
   if (isError) {
@@ -29,13 +29,13 @@ export default function ListCard() {
   return (
     <>
       <ListCardContainer>
-        {data?.map((c, i) => (
+        {data?.map((product, i) => (
           <Card
             img=""
-            title={c.title}
-            rating={c.rating}
-            ratingCount={c.ratingCount}
-            price={c.price}
+            title={product.title}
+            rating={product.rating}
+            ratingCount={product.ratingCount}
+            price={product.price}
             key={i}
           />
         ))}

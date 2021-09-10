@@ -1,10 +1,9 @@
 import React from "react";
+import styled from "styled-components";
+import ItemPreview from "../components/ItemPreview";
 import Main from "../components/Main";
 import Sidebar from "../components/Sidebar";
 
-import styled from "styled-components";
-import ItemPreview from "../components/ItemPreview";
-export const Container = styled.div``;
 export const Wrapper = styled.div`
   max-width: 2010px;
   display: grid;
@@ -15,12 +14,10 @@ export const Wrapper = styled.div`
 `;
 export default function Home() {
   return (
-    <Container>
-      <Wrapper>
-        <Sidebar />
-        <Main />
-        <ItemPreview />
-      </Wrapper>
-    </Container>
+    <Wrapper>
+      <Sidebar />
+      <Main />
+      <ItemPreview />
+    </Wrapper>
   );
 }

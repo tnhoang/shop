@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
-import { getAllBooks } from "../api";
+import { getAllProducts } from "../api";
 
-export default function BookQuery() {
-  return useQuery("books", getAllBooks);
+export default function ProductQuery() {
+  return useQuery("books", getAllProducts);
 }

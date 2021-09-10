@@ -1,12 +1,7 @@
+import { Button, Rate as RateAnt } from "antd";
 import styled from "styled-components";
-import { COLOR, FONT } from "../constants/css";
+import { COLOR, FONT } from "../utils/constants/css";
 
-import { Button } from "antd";
-import { Rate as RateAnt } from "antd";
-
-/* 
-  Example: <Btn primary large>
-*/
 export const Btn = styled(Button)`
   display: flex;
   justify-content: center;
@@ -35,9 +30,6 @@ export const Btn = styled(Button)`
         `};
 `;
 
-/* 
-  Example: <Text>Ex<Text/> 
-*/
 export const Text = styled.div`
   color: ${(p) => p.color || COLOR.text};
   font-size: ${(p) => p.fontSize || FONT.medium};

@@ -1,7 +1,6 @@
 import { Input } from "antd";
 import styled from "styled-components";
-
-import { COLOR, HEADER, PADDING } from "../../constants/css";
+import { COLOR, HEADER, PADDING } from "../../utils/constants/css";
 
 const PaddingTitle = "12px 30px";
 

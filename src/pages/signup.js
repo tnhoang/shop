@@ -8,11 +8,11 @@ import styled from "styled-components";
 import * as yup from "yup";
 import { signUp } from "../api";
 import { Text } from "../components/base";
-import { FONT } from "../constants/css";
+import { FONT } from "../utils/constants/css";
 
 const schema = yup.object().shape({
   username: yup.string().required(),
-  password: yup.string().required().min(5),
+  password: yup.string().required().min(3),
   passwordConfirmation: yup
     .string()
     .required()
@@ -71,12 +71,9 @@ export default function SignUp() {
             <div key={key}>
               <input
                 {...register(input.name)}
-                // name={input.name}
                 placeholder={input.name}
                 style={{ width: "100%" }}
                 type={input.type}
-                // bordered
-                // size="large"
               />
               <p style={{ color: "red", textAlign: "left" }}>
                 {errors[input.name]?.message}
