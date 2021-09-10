@@ -4,6 +4,7 @@ import { COLOR, HEADER } from "../../utils/constants/css";
 export const Container = styled.div`
   height: 100vh;
   overflow-y: scroll;
+  border-right: 1px solid ${COLOR.border};
 `;
 
 export const Header = styled.div`
@@ -13,7 +14,6 @@ export const Header = styled.div`
   padding: 0 30px;
 
   border-bottom: 1px solid ${COLOR.border};
-  border-right: 1px solid ${COLOR.border};
 `;
 
 export const LeftHeader = styled.div`
