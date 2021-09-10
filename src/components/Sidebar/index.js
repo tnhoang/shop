@@ -41,7 +41,7 @@ export default function Sidebar() {
             <LeftOutlined style={{ fontSize: "1.2rem" }} />
           </SidebarToggle>
           <Text fontSize={FONT.large} fontWeight={FONT.bold}>
-            OYOTEE 🎄
+            SHOP 🎄
           </Text>
         </Header>
         <Filter>
