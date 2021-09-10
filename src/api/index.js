@@ -1,8 +1,8 @@
-import axiosClient from "./axiosClient";
+import client from "./axiosClient";
 
 export const getAllProducts = async () => {
   try {
-    const { data } = await axiosClient.get("products");
+    const { data } = await client.get("products");
     return data;
   } catch (error) {
     throw Error(error.message);
@@ -11,7 +11,7 @@ export const getAllProducts = async () => {
 
 export const signIn = async ({ username, password }) => {
   try {
-    const { data } = await axiosClient.post("authen/sign_in", {
+    const { data } = await client.post("authen/sign_in", {
       username,
       password,
     });
@@ -23,7 +23,7 @@ export const signIn = async ({ username, password }) => {
 
 export const signUp = async ({ username, password }) => {
   try {
-    const { data } = await axiosClient.post("authen/sign_up", {
+    const { data } = await client.post("authen/sign_up", {
       username,
       password,
     });
