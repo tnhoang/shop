@@ -1,10 +1,9 @@
-import React from "react";
 import { Button } from "antd";
-
-import { Rate, Text } from "../../base";
-import { COLOR, FONT } from "../../../constants/css";
-import { CardContainer, Img, PriceContainer, Price } from "./Elements";
+import React from "react";
 import { useStore } from "../../../store/useStore";
+import { COLOR, FONT } from "../../../utils/constants/css";
+import { Rate, Text } from "../../base";
+import { CardContainer, Img, Price, PriceContainer } from "./Elements";
 
 export default function Card({ title, rating, ratingCount, price }) {
   const togglePreview = useStore((state) => state.togglePreview);

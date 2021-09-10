@@ -1,13 +1,14 @@
 import { LeftOutlined } from "@ant-design/icons";
 import { Col } from "antd";
 import React from "react";
-import { COLOR, FONT } from "../../constants/css";
 import { useStore } from "../../store/useStore";
+import { COLOR, FONT } from "../../utils/constants/css";
 import { Btn, Text } from "../base";
-import { HeaderButtons, HearderButton } from "./Elements";
 import {
   ClosePreview,
   ContainerBig,
+  HeaderButtons,
+  HearderButton,
   Img,
   ListImg,
   PreviewButtons,

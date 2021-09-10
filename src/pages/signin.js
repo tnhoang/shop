@@ -8,12 +8,12 @@ import styled from "styled-components";
 import * as yup from "yup";
 import { signIn } from "../api";
 import { Text } from "../components/base";
-import { FONT } from "../constants/css";
+import { FONT } from "../utils/constants/css";
 import LocalStorageService from "../store/localStorageService";
 
 const schema = yup.object().shape({
-  username: yup.string(),
-  password: yup.string().required().min(5),
+  username: yup.string().required(),
+  password: yup.string().required().min(3),
 });
 
 const loginFields = [

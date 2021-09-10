@@ -2,7 +2,7 @@ import React from "react";
 import { Checkbox } from "antd";
 import { LeftOutlined } from "@ant-design/icons";
 
-import { FONT } from "../../constants/css";
+import { FONT } from "../../utils/constants/css";
 import { Btn, Text, Rate } from "../base";
 import {
   Container,

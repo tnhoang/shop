@@ -1,23 +1,23 @@
-const AccessToken = "access_token";
-const RefreshToken = "refresh_tokens";
+const ACCESS_TOKEN = "access_token";
+const REFRESH_TOKEN = "refresh_tokens";
 
 const LocalStorageService = {
   getAccessToken: () => {
-    return localStorage.getItem(AccessToken);
+    return localStorage.getItem(ACCESS_TOKEN);
   },
 
   getRefreshToken: () => {
-    return localStorage.getItem(RefreshToken);
+    return localStorage.getItem(REFRESH_TOKEN);
   },
 
   setToken: ({ access_token, refresh_token }) => {
-    localStorage.setItem(AccessToken, access_token);
-    localStorage.setItem(RefreshToken, refresh_token);
+    localStorage.setItem(ACCESS_TOKEN, access_token);
+    localStorage.setItem(REFRESH_TOKEN, refresh_token);
   },
 
   clearToken: () => {
-    localStorage.removeItem(AccessToken);
-    localStorage.removeItem(RefreshToken);
+    localStorage.removeItem(ACCESS_TOKEN);
+    localStorage.removeItem(REFRESH_TOKEN);
   },
 };
 

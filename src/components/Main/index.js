@@ -2,9 +2,9 @@ import { MenuOutlined, SearchOutlined } from "@ant-design/icons";
 import { Input } from "antd";
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { COLOR, FONT } from "../../constants/css";
 import LocalStorageService from "../../store/localStorageService";
 import { useStore } from "../../store/useStore";
+import { COLOR, FONT } from "../../utils/constants/css";
 import { Btn, Text } from "../base";
 import {
   Body,

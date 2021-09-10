@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { COLOR, HEADER } from "../../constants/css";
+import { COLOR, HEADER } from "../../utils/constants/css";
 
 export const ContainerBig = styled.div`
   overflow-y: scroll;

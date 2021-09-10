@@ -1,6 +1,5 @@
 import styled from "styled-components";
-
-import { COLOR, HEADER } from "../../constants/css";
+import { COLOR, HEADER } from "../../utils/constants/css";
 
 export const Container = styled.div`
   height: 100vh;
@@ -85,5 +84,3 @@ export const SearchDescription = styled.div`
   display: flex;
   margin-top: 6px;
 `;
-
-

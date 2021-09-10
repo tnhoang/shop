@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { COLOR } from "../../../constants/css";
+import { COLOR } from "../../../utils/constants/css";
 
 export const CardContainer = styled.div`
   width: 100%;
