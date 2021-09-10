@@ -24,6 +24,15 @@ export default function Sidebar() {
   const sidebarState = useStore((state) => state.sidebarState);
   const toggleSidebar = useStore((state) => state.toggleSidebar);
 
+  const categories = [
+    "Gardening",
+    "Plants",
+    "Seeds",
+    "Bulbs",
+    "Planters",
+    "Others",
+  ];
+
   return (
     <Container sidebarState={sidebarState}>
       <Wrapper>
@@ -41,10 +50,10 @@ export default function Sidebar() {
         <Categories>
           <Text fontWeight={FONT.bold}>Categories</Text>
           <CategoriesSelection>
-            {[1, 2, 3, 4, 5].map((i) => (
+            {categories?.map((name, i) => (
               <div key={i}>
                 <Checkbox>
-                  <Text>Checkbox</Text>
+                  <Text>{name}</Text>
                 </Checkbox>
               </div>
             ))}
